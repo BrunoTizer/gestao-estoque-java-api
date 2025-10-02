@@ -1,0 +1,7 @@
+spring:
+  jpa:
+    show-sql: true
+  application:
+    name: gestao-estoque
+  profiles:
+    active: ${PROFILE:local}
