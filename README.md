@@ -70,3 +70,8 @@ Sistema para controlar estoque de produtos. Ajuda a saber quando precisa comprar
 - SaidaEstoque tem Produto (muitos pra um)
 - EstoqueAtual tem Produto (um pra um)
 - ConfiguracoesFornecedor tem Fornecedor (um pra um)
+
+## Documentação da API
+
+A documentação completa da API está disponível via Swagger:
+- Acessar: `http://localhost:8082/swagger-ui.html`
