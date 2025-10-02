@@ -1,0 +1,203 @@
+{
+	"info": {
+		"name": "Gestao Estoque API",
+		"description": "Collection para testar API de Gestão de Estoque",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Fornecedores",
+			"item": [
+				{
+					"name": "Listar Fornecedores",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/fornecedores",
+							"host": ["localhost"],
+							"port": "8082",
+							"path": ["api", "v1", "fornecedores"]
+						}
+					}
+				},
+				{
+					"name": "Criar Fornecedor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Fornecedor Teste\",\n  \"cnpj\": \"12345678000190\",\n  \"telefone\": \"11999999999\",\n  \"email\": \"teste@fornecedor.com\",\n  \"ativo\": true\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/v1/fornecedores",
+							"host": ["localhost"],
+							"port": "8082",
+							"path": ["api", "v1", "fornecedores"]
+						}
+					}
+				},
+				{
+					"name": "Buscar Fornecedor por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/fornecedores/{{fornecedor_id}}",
+							"host": ["localhost"],
+							"port": "8082",
+							"path": ["api", "v1", "fornecedores", "{{fornecedor_id}}"]
+						}
+					}
+				},
+				{
+					"name": "Atualizar Fornecedor",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"{{fornecedor_id}}\",\n  \"nome\": \"Fornecedor Atualizado\",\n  \"cnpj\": \"12345678000190\",\n  \"telefone\": \"11888888888\",\n  \"email\": \"atualizado@fornecedor.com\",\n  \"ativo\": true\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/v1/fornecedores/{{fornecedor_id}}",
+							"host": ["localhost"],
+							"port": "8082",
+							"path": ["api", "v1", "fornecedores", "{{fornecedor_id}}"]
+						}
+					}
+				},
+				{
+					"name": "Deletar Fornecedor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/fornecedores/{{fornecedor_id}}",
+							"host": ["localhost"],
+							"port": "8082",
+							"path": ["api", "v1", "fornecedores", "{{fornecedor_id}}"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Marcas",
+			"item": [
+				{
+					"name": "Listar Marcas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/marcas",
+							"host": ["localhost"],
+							"port": "8082",
+							"path": ["api", "v1", "marcas"]
+						}
+					}
+				},
+				{
+					"name": "Criar Marca",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Marca Teste\",\n  \"ativo\": true\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/v1/marcas",
+							"host": ["localhost"],
+							"port": "8082",
+							"path": ["api", "v1", "marcas"]
+						}
+					}
+				},
+				{
+					"name": "Buscar Marca por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/marcas/{{marca_id}}",
+							"host": ["localhost"],
+							"port": "8082",
+							"path": ["api", "v1", "marcas", "{{marca_id}}"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Produtos",
+			"item": [
+				{
+					"name": "Listar Produtos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/produtos",
+							"host": ["localhost"],
+							"port": "8082",
+							"path": ["api", "v1", "produtos"]
+						}
+					}
+				},
+				{
+					"name": "Criar Produto",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"codigoProduto\": \"PROD001\",\n  \"nomeProduto\": \"Produto Teste\",\n  \"fornecedor\": {\n    \"id\": \"{{fornecedor_id}}\"\n  },\n  \"marca\": {\n    \"id\": \"{{marca_id}}\"\n  },\n  \"ativo\": true\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/v1/produtos",
+							"host": ["localhost"],
+							"port": "8082",
+							"path": ["api", "v1", "produtos"]
+						}
+					}
+				},
+				{
+					"name": "Buscar Produto por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/produtos/{{produto_id}}",
+							"host": ["localhost"],
+							"port": "8082",
+							"path": ["api", "v1", "produtos", "{{produto_id}}"]
+						}
+					}
+				}
+			]
+		}
+	]
+}

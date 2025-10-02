@@ -75,3 +75,8 @@ Sistema para controlar estoque de produtos. Ajuda a saber quando precisa comprar
 
 A documentação completa da API está disponível via Swagger:
 - Acessar: `http://localhost:8082/swagger-ui.html`
+
+## Testes da API
+
+Para testar os endpoints, importe a collection do Postman:
+- Arquivo: `Gestao-Estoque-API.postman_collection.json`
