@@ -62,3 +62,11 @@ Sistema para controlar estoque de produtos. Ajuda a saber quando precisa comprar
 - ativo: Boolean
 - createdAt: Date
 - updatedAt: Date
+
+## Relacionamentos
+
+- Produto tem Fornecedor (muitos pra um)
+- Produto tem Marca (muitos pra um)
+- SaidaEstoque tem Produto (muitos pra um)
+- EstoqueAtual tem Produto (um pra um)
+- ConfiguracoesFornecedor tem Fornecedor (um pra um)
