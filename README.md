@@ -6,9 +6,9 @@ Sistema para controlar estoque de produtos. Ajuda a saber quando precisa comprar
 
 ## Integrantes do Grupo
 
-- **RM 560812** - Gabriel Dos Santos Souza
-- **RM 560649** - Thomas Henrique Baute
-- **RM 559999** - Bruno Mateus Tizer das Chagas - Responsável pelo projeto de JAVA
+- **RM 560812** - Gabriel Dos Santos Souza - Responsável por NoSQL e IOT
+- **RM 560649** - Thomas Henrique Baute - Responsável por .NET, QA e DevOPS
+- **RM 559999** - Bruno Mateus Tizer das Chagas - Responsável por Mobile e JAVA
 
 ## Como rodar?
 
