@@ -80,3 +80,7 @@ A documentação completa da API está disponível via Swagger:
 
 Para testar os endpoints, importe a collection do Postman:
 - Arquivo: `Gestao-Estoque-API.postman_collection.json`
+
+
+## Modelo DER
+![img.png](img.png)
