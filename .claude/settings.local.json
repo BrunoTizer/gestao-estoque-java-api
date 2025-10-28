@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/BRUNO.TIZER/java-advanced-2025/src/main/java/com/example/java_advanced/configurations/**)",
+      "Read(//c/Users/BRUNO.TIZER/java-advanced-2025/src/main/java/com/example/java_advanced/gateways/**)",
+      "Read(//c/Users/BRUNO.TIZER/java-advanced-2025/src/main/java/com/example/java_advanced/domains/**)",
+      "Read(//c/Users/BRUNO.TIZER/java-advanced-2025/**)",
+      "Bash(dir:*)",
+      "Read(//c/Users/BRUNO.TIZER/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
