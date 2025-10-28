@@ -6,7 +6,8 @@
       "Read(//c/Users/BRUNO.TIZER/java-advanced-2025/src/main/java/com/example/java_advanced/domains/**)",
       "Read(//c/Users/BRUNO.TIZER/java-advanced-2025/**)",
       "Bash(dir:*)",
-      "Read(//c/Users/BRUNO.TIZER/**)"
+      "Read(//c/Users/BRUNO.TIZER/**)",
+      "Bash(ls:*)"
     ],
     "deny": [],
     "ask": []

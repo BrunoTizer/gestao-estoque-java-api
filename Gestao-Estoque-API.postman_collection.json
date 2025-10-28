@@ -1,7 +1,7 @@
 {
 	"info": {
-		"name": "Gestao Estoque API",
-		"description": "Collection para testar API de Gestão de Estoque",
+		"name": "Gestao Estoque API - Sprint 2",
+		"description": "Collection para testar API de Gestão de Estoque - Atualizada Sprint 2",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -13,28 +13,6 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "http://localhost:8082/api/v1/fornecedores",
-							"host": ["localhost"],
-							"port": "8082",
-							"path": ["api", "v1", "fornecedores"]
-						}
-					}
-				},
-				{
-					"name": "Criar Fornecedor",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"nome\": \"Fornecedor Teste\",\n  \"cnpj\": \"12345678000190\",\n  \"telefone\": \"11999999999\",\n  \"email\": \"teste@fornecedor.com\",\n  \"ativo\": true\n}"
-						},
 						"url": {
 							"raw": "http://localhost:8082/api/v1/fornecedores",
 							"host": ["localhost"],
@@ -57,6 +35,28 @@
 					}
 				},
 				{
+					"name": "Criar Fornecedor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Fornecedor ABC Ltda\",\n  \"cnpj\": \"12345678000190\",\n  \"telefone\": \"11999999999\",\n  \"email\": \"contato@fornecedorabc.com\",\n  \"ativo\": true\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/v1/fornecedores",
+							"host": ["localhost"],
+							"port": "8082",
+							"path": ["api", "v1", "fornecedores"]
+						}
+					}
+				},
+				{
 					"name": "Atualizar Fornecedor",
 					"request": {
 						"method": "PUT",
@@ -68,7 +68,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"id\": \"{{fornecedor_id}}\",\n  \"nome\": \"Fornecedor Atualizado\",\n  \"cnpj\": \"12345678000190\",\n  \"telefone\": \"11888888888\",\n  \"email\": \"atualizado@fornecedor.com\",\n  \"ativo\": true\n}"
+							"raw": "{\n  \"id\": \"{{fornecedor_id}}\",\n  \"nome\": \"Fornecedor ABC Atualizado\",\n  \"cnpj\": \"12345678000190\",\n  \"telefone\": \"11888888888\",\n  \"email\": \"novo@fornecedorabc.com\",\n  \"ativo\": true\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8082/api/v1/fornecedores/{{fornecedor_id}}",
@@ -110,6 +110,19 @@
 					}
 				},
 				{
+					"name": "Buscar Marca por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/marcas/{{marca_id}}",
+							"host": ["localhost"],
+							"port": "8082",
+							"path": ["api", "v1", "marcas", "{{marca_id}}"]
+						}
+					}
+				},
+				{
 					"name": "Criar Marca",
 					"request": {
 						"method": "POST",
@@ -121,7 +134,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"nome\": \"Marca Teste\",\n  \"ativo\": true\n}"
+							"raw": "{\n  \"nome\": \"Nike\",\n  \"ativo\": true\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8082/api/v1/marcas",
@@ -132,9 +145,31 @@
 					}
 				},
 				{
-					"name": "Buscar Marca por ID",
+					"name": "Atualizar Marca",
 					"request": {
-						"method": "GET",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"{{marca_id}}\",\n  \"nome\": \"Adidas\",\n  \"ativo\": true\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/v1/marcas/{{marca_id}}",
+							"host": ["localhost"],
+							"port": "8082",
+							"path": ["api", "v1", "marcas", "{{marca_id}}"]
+						}
+					}
+				},
+				{
+					"name": "Deletar Marca",
+					"request": {
+						"method": "DELETE",
 						"header": [],
 						"url": {
 							"raw": "http://localhost:8082/api/v1/marcas/{{marca_id}}",
@@ -163,6 +198,19 @@
 					}
 				},
 				{
+					"name": "Buscar Produto por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/produtos/{{produto_id}}",
+							"host": ["localhost"],
+							"port": "8082",
+							"path": ["api", "v1", "produtos", "{{produto_id}}"]
+						}
+					}
+				},
+				{
 					"name": "Criar Produto",
 					"request": {
 						"method": "POST",
@@ -174,7 +222,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"codigoProduto\": \"PROD001\",\n  \"nomeProduto\": \"Produto Teste\",\n  \"fornecedor\": {\n    \"id\": \"{{fornecedor_id}}\"\n  },\n  \"marca\": {\n    \"id\": \"{{marca_id}}\"\n  },\n  \"ativo\": true\n}"
+							"raw": "{\n  \"codigoProduto\": \"PROD001\",\n  \"nomeProduto\": \"Tenis Nike Air Max\",\n  \"fornecedor\": {\n    \"id\": \"{{fornecedor_id}}\"\n  },\n  \"marca\": {\n    \"id\": \"{{marca_id}}\"\n  },\n  \"quantidadeAtual\": 100,\n  \"ativo\": true\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8082/api/v1/produtos",
@@ -185,15 +233,178 @@
 					}
 				},
 				{
-					"name": "Buscar Produto por ID",
+					"name": "Atualizar Produto",
 					"request": {
-						"method": "GET",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"{{produto_id}}\",\n  \"codigoProduto\": \"PROD001\",\n  \"nomeProduto\": \"Tenis Nike Air Max 2023\",\n  \"fornecedor\": {\n    \"id\": \"{{fornecedor_id}}\"\n  },\n  \"marca\": {\n    \"id\": \"{{marca_id}}\"\n  },\n  \"quantidadeAtual\": 150,\n  \"ativo\": true\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/v1/produtos/{{produto_id}}",
+							"host": ["localhost"],
+							"port": "8082",
+							"path": ["api", "v1", "produtos", "{{produto_id}}"]
+						}
+					}
+				},
+				{
+					"name": "Deletar Produto",
+					"request": {
+						"method": "DELETE",
 						"header": [],
 						"url": {
 							"raw": "http://localhost:8082/api/v1/produtos/{{produto_id}}",
 							"host": ["localhost"],
 							"port": "8082",
 							"path": ["api", "v1", "produtos", "{{produto_id}}"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Saida Estoque",
+			"item": [
+				{
+					"name": "Listar Saidas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/saida-estoque",
+							"host": ["localhost"],
+							"port": "8082",
+							"path": ["api", "v1", "saida-estoque"]
+						}
+					}
+				},
+				{
+					"name": "Buscar Saida por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/saida-estoque/{{saida_id}}",
+							"host": ["localhost"],
+							"port": "8082",
+							"path": ["api", "v1", "saida-estoque", "{{saida_id}}"]
+						}
+					}
+				},
+				{
+					"name": "Registrar Saida",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"produto\": {\n    \"id\": \"{{produto_id}}\"\n  },\n  \"quantidade\": 10\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/v1/saida-estoque",
+							"host": ["localhost"],
+							"port": "8082",
+							"path": ["api", "v1", "saida-estoque"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Configuracoes Fornecedor",
+			"item": [
+				{
+					"name": "Listar Configuracoes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/configuracoes-fornecedor",
+							"host": ["localhost"],
+							"port": "8082",
+							"path": ["api", "v1", "configuracoes-fornecedor"]
+						}
+					}
+				},
+				{
+					"name": "Buscar Configuracao por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/configuracoes-fornecedor/{{config_id}}",
+							"host": ["localhost"],
+							"port": "8082",
+							"path": ["api", "v1", "configuracoes-fornecedor", "{{config_id}}"]
+						}
+					}
+				},
+				{
+					"name": "Criar Configuracao",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"fornecedor\": {\n    \"id\": \"{{fornecedor_id}}\"\n  },\n  \"mesesPlanejamento\": 6,\n  \"mesesMinimos\": 2,\n  \"prazoEntregaDias\": 15,\n  \"ativo\": true\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/v1/configuracoes-fornecedor",
+							"host": ["localhost"],
+							"port": "8082",
+							"path": ["api", "v1", "configuracoes-fornecedor"]
+						}
+					}
+				},
+				{
+					"name": "Atualizar Configuracao",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"{{config_id}}\",\n  \"fornecedor\": {\n    \"id\": \"{{fornecedor_id}}\"\n  },\n  \"mesesPlanejamento\": 12,\n  \"mesesMinimos\": 3,\n  \"prazoEntregaDias\": 20,\n  \"ativo\": true\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/v1/configuracoes-fornecedor/{{config_id}}",
+							"host": ["localhost"],
+							"port": "8082",
+							"path": ["api", "v1", "configuracoes-fornecedor", "{{config_id}}"]
+						}
+					}
+				},
+				{
+					"name": "Deletar Configuracao",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/configuracoes-fornecedor/{{config_id}}",
+							"host": ["localhost"],
+							"port": "8082",
+							"path": ["api", "v1", "configuracoes-fornecedor", "{{config_id}}"]
 						}
 					}
 				}

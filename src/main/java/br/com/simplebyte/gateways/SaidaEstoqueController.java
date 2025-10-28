@@ -1,6 +1,7 @@
 package br.com.simplebyte.gateways;
 
 import br.com.simplebyte.domains.SaidaEstoque;
+import br.com.simplebyte.services.SaidaEstoqueService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,22 +14,22 @@ import java.util.List;
 @RequiredArgsConstructor
 public class SaidaEstoqueController {
 
-    private final SaidaEstoqueRepository saidaEstoqueRepository;
+    private final SaidaEstoqueService saidaEstoqueService;
 
     @GetMapping
     public List<SaidaEstoque> listarTodos() {
-        return saidaEstoqueRepository.findAll();
+        return saidaEstoqueService.listarTodos();
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<SaidaEstoque> buscarPorId(@PathVariable String id) {
-        SaidaEstoque saida = saidaEstoqueRepository.findById(id).get();
+        SaidaEstoque saida = saidaEstoqueService.buscarPorId(id).get();
         return ResponseEntity.ok(saida);
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public SaidaEstoque criar(@RequestBody SaidaEstoque saidaEstoque) {
-        return saidaEstoqueRepository.save(saidaEstoque);
+        return saidaEstoqueService.criar(saidaEstoque);
     }
 }

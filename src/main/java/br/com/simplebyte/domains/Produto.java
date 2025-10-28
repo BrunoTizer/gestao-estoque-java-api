@@ -3,6 +3,8 @@ package br.com.simplebyte.domains;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.Date;
+
 @With
 @Getter
 @Entity
@@ -21,6 +23,8 @@ public class Produto {
     private Fornecedor fornecedor;
     @ManyToOne
     private Marca marca;
+    private Integer quantidadeAtual;
+    private Date dataUltimaAtualizacao;
     private Boolean ativo;
 
 }

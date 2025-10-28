@@ -4,4 +4,4 @@ spring:
   application:
     name: gestao-estoque
   profiles:
-    active: ${PROFILE:local}
+    active: ${PROFILE:dev}
